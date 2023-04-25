@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>URL Shortener</title>
+
+    <link rel="icon" type="image/x-icon" href="/Portfolio Projects/URL Shortener/img/smarthub-smarthub.webp">
+
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/media query.css">
+
+    <script src="script/api req.js" defer></script>
+    <script src="script/script.js" defer></script>
+    <script src="libs/jquery-3.6.4.min.js" defer></script>
+    <script src="script/mobile menu collapse.js" defer></script>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav-logo-items">
+                <div class="logo">Shortify</div>
+                <div class="nav-links nav-font-size">
+                    <a href="#home">
+                        <p class="nav-items" id="btn-animation">Home</p>
+                    </a>
+                    <a href="#main" id="btn-animation">
+                        <p class="nav-items">Main</p>
+                    </a>
+                    <a href="#about" id="btn-animation">
+                        <p class="nav-items">About</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="nav-btns">
+                <button class="login nav-font-size" id="btn-animation">Login</button>
+                <button class="sign-up nav-font-size" id="btn-animation">Sign Up</button>
+            </div>
+
+            <div class="hamburger">
+                <svg version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"
+                    x="0px" y="0px" width="124px" height="124px" viewBox="0 0 124 124" xml:space="preserve">
+                    <path d="M112,6H12C5.4,6,0,11.4,0,18s5.4,12,12,12h100c6.6,0,12-5.4,12-12S118.6,6,112,6z" />
+                    <path
+                        d="M112,50H12C5.4,50,0,55.4,0,62c0,6.6,5.4,12,12,12h100c6.6,0,12-5.4,12-12C124,55.4,118.6,50,112,50z" />
+                    <path d="M112,94H12c-6.6,0-12,5.4-12,12s5.4,12,12,12h100c6.6,0,12-5.4,12-12S118.6,94,112,94z" />
+                </svg>
+            </div>
+        </nav>
+
+        <nav class="nav-2 menu-mobile">
+            <div class="nav-2-wrapper">
+                <div class="logo">Shortify</div>
+                <a class="menu-triger" href="#">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round"></path> <path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round"></path> <path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round"></path> </g></svg>
+                </a>
+                <div class="menu-popup">
+                    <a class="menu-close" href="#">
+                        <svg viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>cancel</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="work-case" fill="#000000" transform="translate(91.520000, 91.520000)"> <polygon id="Close" points="328.96 30.2933333 298.666667 1.42108547e-14 164.48 134.4 30.2933333 1.42108547e-14 1.42108547e-14 30.2933333 134.4 164.48 1.42108547e-14 298.666667 30.2933333 328.96 164.48 194.56 298.666667 328.96 328.96 298.666667 194.56 164.48"> </polygon> </g> </g> </g></svg>
+                    </a>
+                    <div class="mob-menu">
+                        <a class="nav-part" href="#home">
+                            <p class="nav-items" id="btn-animation">Home</p>
+                        </a>
+                        <a class="nav-part" href="#main" id="btn-animation">
+                            <p class="nav-items">Main</p>
+                        </a>
+                        <a class="nav-part" href="#about" id="btn-animation">
+                            <p class="nav-items">About</p>
+                        </a>
+                        <a class="nav-part" href="#" id="btn-animation">
+                            <p class="nav-items">Login</p>
+                        </a>
+                        <a class="nav-part" href="#" id="btn-animation">
+                            <p class="nav-items">Sign Up</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div id="home" class="main-page-wrapper">
+            <div class="main-page-container-1">
+                <h1 class="heading">More than just shorter links</h1>
+                <p>Build and run workflows using the Relink - URL Shortener API. Use 1000s of source-available triggers
+                    and actions across 1000+ apps. Or write custom code to integrate any app or API in seconds.</p>
+                <a href="#main"><button id="btn-animation">Get Started</button></a>
+            </div>
+
+            <div class="main-page-img">
+                <img class="main-img" src="img/linkvec.png" alt="main-img">
+            </div>
+        </div>
+
+        <div id="main" class="input-wrapper">
+            <form class="input-wrapper-inn">
+                <input type="text" id="longUrl" placeholder="Shorten a link here">
+                <button id="btn-animation">Shorten it!</button>
+            </form>
+        </div>
+        <div class="background-wrapper">
+
+            <div class="shorted-link" id="shortLinkContainer">
+                <div class="link-wrapper">
+                    <p id="shortLink"></p>
+                    <svg id="copyIco" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M19.53 8L14 2.47C13.8595 2.32931 13.6688 2.25018 13.47 2.25H11C10.2707 2.25 9.57118 2.53973 9.05546 3.05546C8.53973 3.57118 8.25 4.27065 8.25 5V6.25H7C6.27065 6.25 5.57118 6.53973 5.05546 7.05546C4.53973 7.57118 4.25 8.27065 4.25 9V19C4.25 19.7293 4.53973 20.4288 5.05546 20.9445C5.57118 21.4603 6.27065 21.75 7 21.75H14C14.7293 21.75 15.4288 21.4603 15.9445 20.9445C16.4603 20.4288 16.75 19.7293 16.75 19V17.75H17C17.7293 17.75 18.4288 17.4603 18.9445 16.9445C19.4603 16.4288 19.75 15.7293 19.75 15V8.5C19.7421 8.3116 19.6636 8.13309 19.53 8ZM14.25 4.81L17.19 7.75H14.25V4.81ZM15.25 19C15.25 19.3315 15.1183 19.6495 14.8839 19.8839C14.6495 20.1183 14.3315 20.25 14 20.25H7C6.66848 20.25 6.35054 20.1183 6.11612 19.8839C5.8817 19.6495 5.75 19.3315 5.75 19V9C5.75 8.66848 5.8817 8.35054 6.11612 8.11612C6.35054 7.8817 6.66848 7.75 7 7.75H8.25V15C8.25 15.7293 8.53973 16.4288 9.05546 16.9445C9.57118 17.4603 10.2707 17.75 11 17.75H15.25V19ZM17 16.25H11C10.6685 16.25 10.3505 16.1183 10.1161 15.8839C9.8817 15.6495 9.75 15.3315 9.75 15V5C9.75 4.66848 9.8817 4.35054 10.1161 4.11612C10.3505 3.8817 10.6685 3.75 11 3.75H12.75V8.5C12.7526 8.69811 12.8324 8.88737 12.9725 9.02747C13.1126 9.16756 13.3019 9.24741 13.5 9.25H18.25V15C18.25 15.3315 18.1183 15.6495 17.8839 15.8839C17.6495 16.1183 17.3315 16.25 17 16.25Z" fill="#000000"></path> </g></svg>
+                </div>
+                <div class="tooltip" id="myTooltip" style="display: none;">Copied!</div>
+            </div>
+
+            <div class="inner-wrapper">
+                <div class="page-wrapper">
+                    <div class="text-advanced">
+                        <h1>Advanced Statistics</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum velit nihil iusto temporibus
+                            officiis provident minima ratione laboriosam nobis esse!</p>
+                    </div>
+
+                    <div class="block-additional">
+                        <div class="line"></div>
+                        <div class="card-wrapper card-wrapper-1">
+                            <div class="icons-cards">
+                                <img src="img/line-chart.png" class="card-img card-img-1" alt="line">
+                            </div>
+                            <div class="card-1">
+                                <h1 class="header-text">Brand Recognition</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque est voluptate,
+                                    aliquid culpa architecto inventore.</p>
+                            </div>
+                        </div>
+                        <div class="card-wrapper card-wrapper-2">
+                            <img src="img/clock.png" class="card-img card-img-2" alt="clock">
+                            <div class="card-2">
+                                <h1 class="header-text">Detailed Records</h1>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit iste optio modi
+                                    molestiae voluptate incidunt atque rerum blanditiis?</p>
+                            </div>
+                        </div>
+                        <div class="card-wrapper card-wrapper-3">
+                            <img src="img/paint-palette.png" class="card-img card-img-3" alt="paint">
+                            <div class="card-3">
+                                <h1 class="header-text">Fully Customizable</h1>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit iste optio modi
+                                    molestiae voluptate incidunt atque.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="about" class="boost-wrapper">
+            <h1 class="booster">Boost your links today</h1>
+            <a href="#main"><button id="btn-animation">Get Started</button></a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="logo-footer">Shortify</div>
+
+        <div class="footer-content">
+            <div class="footer-container">
+                <h1 class="footer-h1">Features</h1>
+                <p>Link Shortening</p>
+                <p>Branded Links</p>
+                <p>Analytics</p>
+            </div>
+
+            <div class="footer-container">
+                <h1 class="footer-h1">Resources</h1>
+                <p>Blog</p>
+                <p>Developers</p>
+                <p>Support</p>
+            </div>
+
+            <div class="footer-container">
+                <h1 class="footer-h1">Company</h1>
+                <p>About</p>
+                <p>Our Team</p>
+                <p>Careers</p>
+                <p>Contact</p>
+            </div>
+        </div>
+
+        <div class="socials">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path
+                    d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z" />
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path
+                    d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-48.9 158.8c.2 2.8.2 5.7.2 8.5 0 86.7-66 186.6-186.6 186.6-37.2 0-71.7-10.8-100.7-29.4 5.3.6 10.4.8 15.8.8 30.7 0 58.9-10.4 81.4-28-28.8-.6-53-19.5-61.3-45.5 10.1 1.5 19.2 1.5 29.6-1.2-30-6.1-52.5-32.5-52.5-64.4v-.8c8.7 4.9 18.9 7.9 29.6 8.3a65.447 65.447 0 0 1-29.2-54.6c0-12.2 3.2-23.4 8.9-33.1 32.3 39.8 80.8 65.8 135.2 68.6-9.3-44.5 24-80.6 64-80.6 18.9 0 35.9 7.9 47.9 20.7 14.8-2.8 29-8.3 41.6-15.8-4.9 15.2-15.2 28-28.8 36.1 13.2-1.4 26-5.1 37.8-10.2-8.9 13.1-20.1 24.7-32.9 34z" />
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path
+                    d="M448 80v352c0 26.5-21.5 48-48 48H154.4c9.8-16.4 22.4-40 27.4-59.3 3-11.5 15.3-58.4 15.3-58.4 8 15.3 31.4 28.2 56.3 28.2 74.1 0 127.4-68.1 127.4-152.7 0-81.1-66.2-141.8-151.4-141.8-106 0-162.2 71.1-162.2 148.6 0 36 19.2 80.8 49.8 95.1 4.7 2.2 7.1 1.2 8.2-3.3.8-3.4 5-20.1 6.8-27.8.6-2.5.3-4.6-1.7-7-10.1-12.3-18.3-34.9-18.3-56 0-54.2 41-106.6 110.9-106.6 60.3 0 102.6 41.1 102.6 99.9 0 66.4-33.5 112.4-77.2 112.4-24.1 0-42.1-19.9-36.4-44.4 6.9-29.2 20.3-60.7 20.3-81.8 0-53-75.5-45.7-75.5 25 0 21.7 7.3 36.5 7.3 36.5-31.4 132.8-36.1 134.5-29.6 192.6l2.2.8H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48z" />
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path
+                    d="M224,202.66A53.34,53.34,0,1,0,277.36,256,53.38,53.38,0,0,0,224,202.66Zm124.71-41a54,54,0,0,0-30.41-30.41c-21-8.29-71-6.43-94.3-6.43s-73.25-1.93-94.31,6.43a54,54,0,0,0-30.41,30.41c-8.28,21-6.43,71.05-6.43,94.33S91,329.26,99.32,350.33a54,54,0,0,0,30.41,30.41c21,8.29,71,6.43,94.31,6.43s73.24,1.93,94.3-6.43a54,54,0,0,0,30.41-30.41c8.35-21,6.43-71.05,6.43-94.33S357.1,182.74,348.75,161.67ZM224,338a82,82,0,1,1,82-82A81.9,81.9,0,0,1,224,338Zm85.38-148.3a19.14,19.14,0,1,1,19.13-19.14A19.1,19.1,0,0,1,309.42,189.74ZM400,32H48A48,48,0,0,0,0,80V432a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V80A48,48,0,0,0,400,32ZM382.88,322c-1.29,25.63-7.14,48.34-25.85,67s-41.4,24.63-67,25.85c-26.41,1.49-105.59,1.49-132,0-25.63-1.29-48.26-7.15-67-25.85s-24.63-41.42-25.85-67c-1.49-26.42-1.49-105.61,0-132,1.29-25.63,7.07-48.34,25.85-67s41.47-24.56,67-25.78c26.41-1.49,105.59-1.49,132,0,25.63,1.29,48.33,7.15,67,25.85s24.63,41.42,25.85,67.05C384.37,216.44,384.37,295.56,382.88,322Z" />
+            </svg>
+        </div>
+
+
+    </footer>
+</body>
+
+</html>
