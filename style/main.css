@@ -203,6 +203,16 @@ nav {
     flex-direction: row;
     color: rgb(114, 114, 114);
     font-size: 2em;
+    animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .shorted-link svg {
