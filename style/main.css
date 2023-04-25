@@ -533,3 +533,10 @@ footer {
     margin-bottom: 5px;
     color: rgb(206, 206, 206);
 }
+
+.author {
+    background-color: #191a5a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
