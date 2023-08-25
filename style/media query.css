@@ -590,6 +590,16 @@
         height: 250px;
     }
 
+    .card-1:hover,
+    .card-2:hover,
+    .card-3:hover {
+        box-shadow: none;
+    }
+
+    .card-wrapper:hover {
+        scale: none;
+    }
+
     .card-1 p,
     .card-2 p,
     .card-3 p {
@@ -601,7 +611,7 @@
     /* FOOTER */
 }
 
-@media (max-width: 402px) {
+@media (max-width: 400px) {
     /* FONT SIZE */
 
     /* ANIMATIONS */
@@ -636,6 +646,7 @@
 
     .input-wrapper-inn {
         margin: 20px;
+        /* width: 200px; */
     }
 
     /* ADVANCED BLOCK */
@@ -695,6 +706,10 @@
         width: 15px;
     }
 }
+
+/* @media (max-width: 402px) {
+
+} */
 
 @media (max-width: 1329px) {
     /* FONT SIZE */
