@@ -556,7 +556,7 @@
     }
 
     .main-page-container-1 p {
-        width: 150%;
+        width: 180%;
         text-align: justify;
     }
 
@@ -576,6 +576,7 @@
     /* ADVANCED BLOCK */
 
     .text-advanced p {
+        width: 150%;
         text-align: justify;
     }
 
@@ -585,7 +586,7 @@
         background-color: white;
         border-radius: 15px;
         padding: 30px;
-        width: 200px;
+        width: 280px;
         height: 250px;
     }
 
