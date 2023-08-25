@@ -497,7 +497,7 @@
     }
 
     .input-wrapper-inn {
-        width: 100%;
+        width: 250px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -634,16 +634,24 @@
         flex-direction: column;
     }
 
+    .input-wrapper-inn {
+        width: 180px;
+    }
+
     /* ADVANCED BLOCK */
 
     .text-advanced {
         padding: 0 5px;
     }
 
+    .text-advanced p {
+        width: 200px;
+    }
+
     .card-1,
     .card-2,
     .card-3 {
-        width: 160px;
+        width: 180px;
         height: 290px;
     }
 
