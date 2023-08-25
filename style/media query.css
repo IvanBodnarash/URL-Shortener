@@ -635,7 +635,7 @@
     }
 
     .input-wrapper-inn {
-        width: 180px;
+        margin: 20px;
     }
 
     /* ADVANCED BLOCK */
@@ -645,13 +645,13 @@
     }
 
     .text-advanced p {
-        width: 200px;
+        width: 300px;
     }
 
     .card-1,
     .card-2,
     .card-3 {
-        width: 180px;
+        width: 250px;
         height: 290px;
     }
 
