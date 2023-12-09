@@ -16,20 +16,20 @@ window.addEventListener('load', () => {
 
 // FORM REQUEST AND RESPONSE
 
-const apiUrl = 'https://api.tinyurl.com/dev/api-create.php';
-const requestData = {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    body: new URLSearchParams({
-        url: longUrl.value,
-    }),
-};
+const apiUrl = 'https://api.tinyurl.com/dev/api-create.php?url=' + encodeURIComponent(longUrl.value);
+// const requestData = {
+//     method: 'POST',
+//     headers: {
+//         'Content-Type': 'application/x-www-form-urlencoded',
+//     },
+//     body: new URLSearchParams({
+//         url: longUrl.value,
+//     }),
+// };
 
 async function shortenUrl() {
     try {
-        const response = await fetch(apiUrl, requestData);
+        const response = await fetch(apiUrl);
     
         if (response.ok) {
             const shortUrl = await response.text();
