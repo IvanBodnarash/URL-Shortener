@@ -27,19 +27,23 @@ const requestData = {
     }),
 };
 
-try {
-    const response = await fetch(apiUrl, requestData);
-
-    if (response.ok) {
-        const shortUrl = await response.text();
-        shortLink.innerHTML = shortUrl;
-        shortLinkContainer.style.display = 'flex';
-    } else {
-        console.error('Failed to shorten the URL.');
+async function shortenUrl() {
+    try {
+        const response = await fetch(apiUrl, requestData);
+    
+        if (response.ok) {
+            const shortUrl = await response.text();
+            shortLink.innerHTML = shortUrl;
+            shortLinkContainer.style.display = 'flex';
+        } else {
+            console.error('Failed to shorten the URL.');
+        }
+    } catch (error) {
+        console.error('Error:', error);
     }
-} catch (error) {
-    console.error('Error:', error);
 }
+
+shortenUrl();
 
 
 // form.addEventListener('submit', async (event) => {
