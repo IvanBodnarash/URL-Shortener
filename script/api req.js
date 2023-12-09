@@ -16,7 +16,48 @@ window.addEventListener('load', () => {
 
 // FORM REQUEST AND RESPONSE
 
-const apiUrl = 'https://api.tinyurl.com/dev/api-create.php?url=' + encodeURIComponent(longUrl.value);
+function shortenUrl() {
+    const longUrl = $('#longUrl').val();
+
+    const linkRequest = {
+        destination: longUrl,
+        domain: { fullName: "rebrand.ly" }
+    };
+
+    const requestHeaders = {
+        "Content-Type": "application/json",
+        "apikey": "8798ccbdb5404b07af6b6526152e3b47"
+    };
+
+    $.ajax({
+        url: "https://api.rebrandly.com/v1/links",
+        type: "post",
+        data: JSON.stringify(linkRequest),
+        headers: requestHeaders,
+        dataType: "json",
+        success: (link) => {
+            $('#shortLink').text(link.shortUrl);
+            $('#shortLinkContainer').css('display', 'block');
+        },
+        error: (error) => {
+            console.error('Failed to shorten the URL:', error);
+        }
+    });
+}
+
+function copyToClipboard() {
+    const shortLink = $('#shortLink');
+    const textarea = $('<textarea>');
+    textarea.val(shortLink.text());
+    $('body').append(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    textarea.remove();
+
+    alert('Shortened URL copied to clipboard!');
+}
+
+// const apiUrl = 'https://api.tinyurl.com/dev/api-create.php?url=' + encodeURIComponent(longUrl.value);
 // const requestData = {
 //     method: 'POST',
 //     headers: {
@@ -27,23 +68,23 @@ const apiUrl = 'https://api.tinyurl.com/dev/api-create.php?url=' + encodeURIComp
 //     }),
 // };
 
-async function shortenUrl() {
-    try {
-        const response = await fetch(apiUrl);
+// async function shortenUrl() {
+//     try {
+//         const response = await fetch(apiUrl);
     
-        if (response.ok) {
-            const shortUrl = await response.text();
-            shortLink.innerHTML = shortUrl;
-            shortLinkContainer.style.display = 'flex';
-        } else {
-            console.error('Failed to shorten the URL.');
-        }
-    } catch (error) {
-        console.error('Error:', error);
-    }
-}
+//         if (response.ok) {
+//             const shortUrl = await response.text();
+//             shortLink.innerHTML = shortUrl;
+//             shortLinkContainer.style.display = 'flex';
+//         } else {
+//             console.error('Failed to shorten the URL.');
+//         }
+//     } catch (error) {
+//         console.error('Error:', error);
+//     }
+// }
 
-shortenUrl();
+// shortenUrl();
 
 
 // form.addEventListener('submit', async (event) => {
