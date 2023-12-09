@@ -20,12 +20,27 @@ form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     // URL to call the TinyURL API for shortening
-    const url = `https://api.tinyurl.com/dev/api-create.php?url=${longUrl.value}`;
-    const response = await fetch(url);
-    const data = await response.json();
-    const shortUrl = data.result.short_link;
-    shortLink.innerHTML = shortUrl;
-    shortLinkContainer.style.display = 'flex';
+    const url = 'https://api.tinyurl.com/dev/api-create.php?url=';
+
+    // Create the full URL for the API call
+    const fullApiUrl = url + encodeURIComponent(longUrl.value);
+
+    try {
+        // Call API for url shortening
+        const response = await fetch(fullApiUrl);
+
+        if (response.ok) {
+            const shortUrl = await response.text();
+            shortLink.innerHTML = shortUrl;
+            shortLinkContainer.style.display = 'flex';
+        } else {
+            console.error('Failed to shorten the URL.');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+    }
+    // const response = await fetch(url);
+    // const data = await response.json();
     form.reset();
 });
 
