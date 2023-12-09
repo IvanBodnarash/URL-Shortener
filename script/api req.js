@@ -16,33 +16,57 @@ window.addEventListener('load', () => {
 
 // FORM REQUEST AND RESPONSE
 
-form.addEventListener('submit', async (event) => {
-    event.preventDefault();
+const apiUrl = 'https://api.tinyurl.com/dev/api-create.php';
+const requestData = {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: new URLSearchParams({
+        url: longUrl.value,
+    }),
+};
 
-    // URL to call the TinyURL API for shortening
-    const url = 'https://api.tinyurl.com/dev/api-create.php?url=';
+try {
+    const response = await fetch(apiUrl, requestData);
 
-    // Create the full URL for the API call
-    const fullApiUrl = url + encodeURIComponent(longUrl.value);
-
-    try {
-        // Call API for url shortening
-        const response = await fetch(fullApiUrl);
-
-        if (response.ok) {
-            const shortUrl = await response.text();
-            shortLink.innerHTML = shortUrl;
-            shortLinkContainer.style.display = 'flex';
-        } else {
-            console.error('Failed to shorten the URL.');
-        }
-    } catch (error) {
-        console.error('Error:', error);
+    if (response.ok) {
+        const shortUrl = await response.text();
+        shortLink.innerHTML = shortUrl;
+        shortLinkContainer.style.display = 'flex';
+    } else {
+        console.error('Failed to shorten the URL.');
     }
-    // const response = await fetch(url);
-    // const data = await response.json();
-    form.reset();
-});
+} catch (error) {
+    console.error('Error:', error);
+}
+
+
+// form.addEventListener('submit', async (event) => {
+//     event.preventDefault();
+
+//     // URL to call the TinyURL API for shortening
+//     const url = 'https://api.tinyurl.com/dev/api-create.php?url=';
+
+//     // Create the full URL for the API call
+//     const fullApiUrl = url + encodeURIComponent(longUrl.value);
+
+//     try {
+//         // Call API for url shortening
+//         const response = await fetch(fullApiUrl);
+
+//         if (response.ok) {
+//             const shortUrl = await response.text();
+//             shortLink.innerHTML = shortUrl;
+//             shortLinkContainer.style.display = 'flex';
+//         } else {
+//             console.error('Failed to shorten the URL.');
+//         }
+//     } catch (error) {
+//         console.error('Error:', error);
+//     }
+//     form.reset();
+// });
 
 
 // TOOLTIP
