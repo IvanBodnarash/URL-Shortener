@@ -18,7 +18,9 @@ window.addEventListener('load', () => {
 
 form.addEventListener('submit', async (event) => {
     event.preventDefault();
-    const url = `https://api.shrtco.de/v2/shorten?url=${longUrl.value}`;
+
+    // URL to call the TinyURL API for shortening
+    const url = `https://api.tinyurl.com/dev/api-create.php?url=${longUrl.value}`;
     const response = await fetch(url);
     const data = await response.json();
     const shortUrl = data.result.short_link;
